@@ -55,7 +55,18 @@ uvicorn 加载方式：模块路径:变量名  →  本项目 backend.main:app
   --reload 仅开发
 """
 
+
+"""
+路由分发：
+    将整个app看作一个总路由
+    在功能模块处，创建分路由: chat = APIRouter(prefix="/chat", tags=["聊天"])
+    关联分路由：
+    在main.py中加载所有分路由,要导入,多个多行
+    app.include_router(chat.chat)
+"""
 app.include_router(chat.router)
+
+
 
 # 国内可访问的 BootCDN（Swagger UI / ReDoc）
 _SWAGGER_JS = (

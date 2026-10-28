@@ -3,9 +3,12 @@ from fastapi import APIRouter
 from backend.agents.chat_agent import run_chat_agent
 from backend.schemas.chat import ChatRequest, ChatResponse
 
+# 创建了一个分路由
 router = APIRouter(prefix="/chat", tags=["聊天"])
+#chat = APIRouter(prefix="/chat", tags=["聊天"])
 
 
+# @chat.post(....)
 @router.post("/", response_model=ChatResponse)
 def chat(body: ChatRequest):
     """接收用户问题，返回 AI 回答"""
