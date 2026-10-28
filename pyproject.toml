@@ -1,0 +1,23 @@
+[project]
+name = "my-ai-project2"
+version = "0.1.0"
+description = "FastAPI + LangChain AI 应用"
+authors = [
+    { name = "zzb", email = "2597541824@qq.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.162.0",
+    "langchain>=1.4.7",
+    "langchain-deepseek>=1.1.1",
+    "langchain-openai>=1.7.2",
+    "pydantic-settings>=2.0.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "backend"
+module-root = "."
